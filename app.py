@@ -14,8 +14,8 @@ from linebot.models import (
 app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 
-line_bot_api = LineBotApi('+CxtyG18ZUz1Y8J9p6h3DpBhEckt3VpFpO7CHrZhqIvZtPMNRgEcYRFLdaKcivBYWuIeMWH1zG5dB3aVK2XjF17tQuD/+vKmp/GL4kv+sRKNSh6Awgi//6VdXIHZj9a/rBe1oT4fIFDG6lrpB3J83AdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('9792df5d3386f64f2f7ca907f1a2c1bc')
+line_bot_api = LineBotApi('ro4RkwujGQyLO3RlwbnPZaazK28meiyLjn0irPIz6JqEDKxSZtcAhT2vsbFi82Q+XM/yCzNl4wuqJvMqb3yty29gR1pKgcdEzmuz2WGWaindPipstV4iLGjZa/273kSuRKSVOyXjGIIcPFhwvzxHcgdB04t89/1O/w1cDnyilFU=')
+handler = WebhookHandler('413f2f5dd5a6a38d4c2820264ed7d509')
 
 @app.route("/")
 def test():
