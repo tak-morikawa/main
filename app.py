@@ -17,6 +17,73 @@ logging.basicConfig(level=logging.INFO)
 line_bot_api = LineBotApi('ro4RkwujGQyLO3RlwbnPZaazK28meiyLjn0irPIz6JqEDKxSZtcAhT2vsbFi82Q+XM/yCzNl4wuqJvMqb3yty29gR1pKgcdEzmuz2WGWaindPipstV4iLGjZa/273kSuRKSVOyXjGIIcPFhwvzxHcgdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('413f2f5dd5a6a38d4c2820264ed7d509')
 
+#‰ñ“š•¶‚ğİ’è‚·‚éƒ}ƒbƒv
+answers = {}
+#1‚ª“ü—Í‚³‚ê‚½ê‡‚Ì‰ñ“š‚ğ’è‹`
+answers["1"] = ("desknet's‚ÉƒƒOƒCƒ“‚µAˆÈ‰º‚Ìè‡‚Å\¿‚µ‚Ä‚­‚¾‚³‚¢\n"
+"1. ¶ƒTƒCƒhƒƒjƒ…[‚Ìƒ[ƒNƒtƒ[‚ğƒNƒŠƒbƒN‚µ‚Ä‚Ë\n"
+"2. u\¿‚Ìì¬v ƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒN\n"
+"3. \¿‘ u‘I‘ğv ƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒNŒãAu’Ê‹Î’èŠú‘ã\¿‘v‚ğ‘I‘ğ\n"
+"4. \¿‘@“ü—ÍƒtƒH[ƒ€‚É‹L“ü‚µ‚Ä\¿")
+
+#2‚ª“ü—Í‚³‚ê‚½ê‡‚Ì‰ñ“š‚ğ’è‹`
+answers["2"] = ("desknet's‚ÉƒƒOƒCƒ“‚µAˆÈ‰º‚Ìè‡‚Å\¿‚µ‚Ä‚­‚¾‚³‚¢\n"
+"1. ¶ƒTƒCƒhƒƒjƒ…[‚Ìƒ[ƒNƒtƒ[‚ğƒNƒŠƒbƒN\n"
+"2. u\¿‚Ìì¬v ƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒN\n"
+"3. \¿‘ u‘I‘ğv ƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒNŒãAuT•ñv‚ğ‘I‘ğ\n"
+"4. \¿‘@“ü—ÍƒtƒH[ƒ€‚É‹L“ü‚µ‚Ä\¿\n"
+"@¦\¿‘–¼‚ÍuT•ñ+iĞˆõ”Ô†j+yyyymmdd(T‰‚ß‚Ì“ú•t)v\n"
+"@¦’ño’÷ØF—‚T‰Î—j“ú")
+
+#3‚ª“ü—Í‚³‚ê‚½ê‡‚Ì‰ñ“š‚ğ’è‹`
+answers["3"] = ("ManageOZO3‚ÉƒƒOƒCƒ“‚µAˆÈ‰º‚Ìè‡‚Å\¿‚µ‚Ä‚­‚¾‚³‚¢B\n"
+"1.ã•”ƒƒjƒ…[‚Ìƒ[ƒNƒtƒ[‚ğƒNƒŠƒbƒN\n"
+"2.uV‹Kì¬v‚ğƒNƒŠƒbƒN\n"
+"3.ŠY“–‚·‚é\¿‘‚Ü‚½‚Í¸Z‚ğƒNƒŠƒbƒN\n"
+"4.“ü—ÍƒtƒH[ƒ€‚É‹L“ü‚µ‚Ä\¿\n"
+"@¦Œo”ï¸ZAÚ‘ÒŒğÛ”ï¸ZAo’£¸Z‚Í–‘O‚ÉŠe\¿‚ª•K—v\n"
+"@¦ManageOZO3‚Ìƒ}ƒjƒ…ƒAƒ‹Fdesknet's > •¶‘ŠÇ— > ‹K’öW > OZO3‹Î‘ÓEH”EŒo”ïjƒ}ƒjƒ…ƒAƒ‹")
+
+#4‚ª“ü—Í‚³‚ê‚½ê‡‚Ì‰ñ“š•¶‚ğ’è‹`
+answers["4"] = "‘–±l–ƒOƒ‹[ƒv@’JŒû‚Ü‚Å“d˜bAƒ[ƒ‹“™‚Å‚²ˆË—Š‚­‚¾‚³‚¢B"
+
+#5‚ª“ü—Í‚³‚ê‚½ê‡‚Ì‰ñ“š•¶‚ğ’è‹`
+answers["6"] = ("ˆÈ‰º‚Ìè‡‚Å\¿‚µ‚Ä‚­‚¾‚³‚¢B\n"
+"1.desknet's > İ”õ—\–ñ‚É‚ÄAZoom‚ÌƒXƒPƒWƒ…[ƒ‹“ü—Í\n"
+"2.ZoomŠÇ—ÒiCC:‘–±l–ƒOƒ‹[ƒv@’JŒûjˆ¶‚Ä‚É•K—v–€‚ğ‹LÚ‚µ‚Äƒ[ƒ‹‚É‚ÄˆË—Š\n"
+"@ ZoomŠÇ—ÒFcss_zoom@chuoss.co.jp\n"
+" @•K—v–€F“úA–Ú“IAQ‰ÁÒ\n"
+"—\–ñ‚ªŠ®—¹ŒãAƒƒOƒCƒ“î•ñ‚ğ‚²˜A—‚¢‚½‚µ‚Ü‚·B")
+
+#6‚ª“ü—Í‚³‚ê‚½ê‡‚Ì‰ñ“š•¶‚ğ’è‹`
+answers["5"] = ("desknet'sAManageOZO3ASYNCNEL‚É‚ÄƒpƒXƒ[ƒh‚ğ‹K’ö‰ñ”ˆÈãŠÔˆá‚¦‚é‚ÆƒƒbƒN‚ª‚©‚©‚è‚Ü‚·B\n"
+"ƒƒbƒN‰ğœ‚Í‘–±l–ƒOƒ‹[ƒv‚Ü‚Å‚²˜A—‚­‚¾‚³‚¢B")
+
+#7‚ª“ü—Í‚³‚ê‚½ê‡‚Ì‰ñ“š•¶‚ğ’è‹`
+answers["7"] = ("ˆÈ‰º‚Ì‘—Ş‚ğ’ño‚¨Šè‚¢‚¢‚½‚µ‚Ü‚·B\n"
+"¡desknet's > ƒ[ƒNƒtƒ[‚É‚Ä’ño\n"
+"E’Ê‹Î’èŠú‘ã\¿‘\n"
+"EĞˆõ–¼•ë¦’Ê‹Î’èŠú‘ã\¿‘ƒ[ƒNƒtƒ[‚É“Y•t\n"
+"¡‘–±l–ƒOƒ‹[ƒvˆ¶‚Äƒ[ƒ‹’ño\n"
+"E‹‹—^Š“¾Ò‚Ì•}—{Tœ“™iˆÙ“®j\‘\n"
+"\n"
+"•Ê‹è“–‚ª”­¶‚·‚éê‡‚ÍŸ‚Ì‘—Ş‚à’ño•K—v\n"
+"¡ƒ[ƒ‹‚Åã’·‚ğ’Ê‚¶‚Ä‘–±l–ƒOƒ‹[ƒv‚Ö’ño\n"
+"Eè“–ˆÙ“®“Í\n"
+"E•Ê‹è“–\¿——R‘\n"
+"EZ–¯•[iŒ´–{j@¦¢‘Ñå‚ª•\‹L‚³‚ê‚½‚à‚Ì‚ğè“–ˆÙ“®“Í‚É“Y•t‚µ‚Ä’ño\n"
+"@¦–{Ğ’nEƒ}ƒCƒiƒ“ƒo[‚Ì‹LÚ‚Í•s—v\n"
+"@ ¦ƒ[ƒ‹‚Å’ño‚Ìê‡‚ÍAÊ‚µ‚Å‰Â")
+
+#ã‹LˆÈŠO‚Ì”Ô†‚ª“ü—Í‚³‚ê‚½ê‡‚Ì‰ñ“š•¶‚ğ’è‹`
+anserelse = ("‚¨”æ‚ê—l‚Å‚·BˆÈ‰º‚Ì–â‚¢‡‚í‚¹‚É‚Â‚¢‚Ä‚¨“š‚¦‚µ‚Ü‚·BŠY“–‚·‚é”Ô†‚ğ‹L“ü‚µ‚Ä‚­‚¾‚³‚¢B\n"
+"1.’Ê‹Î’èŠú‘ãX\n"
+"3.Œo”ï¸Zè‘±‚«\n"
+"4.–¼h’Ç‰Á\n"
+"5.Zoom—\–ñ\n"
+"6.ƒƒbƒN‰ğœ\n"
+"7.ˆø‚Á‰z‚µŒã‚Ìè‘±‚«\n")
+
 @app.route("/")
 def test():
     return "OK TEST"
@@ -46,26 +113,26 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    #ãƒ­ã‚°ã‚’å‡ºåŠ›
-    app.logger.info("ãƒ¦ãƒ¼ã‚¶ãƒ¼å…¥åŠ›å€¤: " + event.message.text)
+    #ƒƒO‚ğo—Í
+    app.logger.info("ƒ†[ƒU[“ü—Í’l: " + event.message.text)
 
-    #ãƒ¦ãƒ¼ã‚¶å…¥åŠ›å€¤ã‹ã‚‰å‰å¾Œã®æ”¹è¡Œã‚’å‰Šé™¤
+    #ƒ†[ƒU“ü—Í’l‚©‚ç‘OŒã‚Ì‰üs‚ğíœ
     input_message = event.message.text.strip()
 
-    #å›ç­”æ–‡ã‚’ä½œæˆ
+    #‰ñ“š•¶‚ğì¬
     reply_message = create_answer(input_message=input_message)
 
-    #å›ç­”æ–‡ã‚’è¿”ä¿¡
+    #‰ñ“š•¶‚ğ•ÔM
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=reply_message))
  
 def create_answer(input_message):
-    #å…¥åŠ›å€¤ã«åˆã‚ã›ãŸå›ç­”æ–‡ã‚’ç·¨é›†
+    #“ü—Í’l‚É‡‚í‚¹‚½‰ñ“š•¶‚ğ•ÒW
     if input_message in answers:
         return answers[input_message]
     else:
-        #å…¥åŠ›å¯¾è±¡å¤–ã¯ç•ªå·ã‚’é¸æŠã•ã›ã‚‹æ–‡ã‚’å›ç­”
+        #“ü—Í‘ÎÛŠO‚Í”Ô†‚ğ‘I‘ğ‚³‚¹‚é•¶‚ğ‰ñ“š
         return anserelse
 
 if __name__ == "__main__":
