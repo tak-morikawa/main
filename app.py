@@ -20,6 +20,7 @@ line_bot_api = LineBotApi('ro4RkwujGQyLO3RlwbnPZaazK28meiyLjn0irPIz6JqEDKxSZtcAh
 handler = WebhookHandler('413f2f5dd5a6a38d4c2820264ed7d509')
 
 # OpenAI API Key
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 @app.route("/")
 def test():
