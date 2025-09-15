@@ -59,7 +59,7 @@ def handle_message(event):
 
 def ask_openai(prompt):
     response = openai.ChatCompletion.create(
-        model="gpt-5",  # 必要に応じて変更
+        model="gpt-3.5-turbo",  # 必要に応じて変更
         messages=[
             {"role": "system", "content": "あなたは親切なLINEボットです。"},
             {"role": "user", "content": prompt}
