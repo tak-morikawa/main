@@ -65,17 +65,18 @@ def handle_image_message(event):
     # 保存先ファイル名
     file_path = f"static/{event.message.id}.jpg"
     with open(file_path, 'wb') as f:
-    for chunk in message_content.iter_content():
-        f.write(chunk)
-        response = client.chat.completions.create(
-    model="gpt-3.5-turbo",  # Vision対応モデル
-    messages=[
-        {"role": "user", "content": [
-            {"type": "text", "text": "この画像の内容を説明してください"},
-            {"type": "image_url", "image_url": {"url": f"file://{file_path}"}}
-        ]}
-    ]
-)
+        for chunk in message_content.iter_content():
+            f.write(chunk)
+
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",  # Vision対応モデル
+        messages=[
+            {"role": "user", "content": [
+                {"type": "text", "text": "この画像の内容を説明してください"},
+                {"type": "image_url", "image_url": {"url": f"file://{file_path}"}}
+            ]}
+        ]  
+    )
 
 def ask_openai(prompt):
     response = openai.ChatCompletion.create(
