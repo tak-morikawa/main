@@ -63,7 +63,7 @@ def handle_image_message(event):
     message_content = line_bot_api.get_message_content(event.message.id)
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=message_content.status_codeply)
+        TextSendMessage(text=message_content.status_code)
     )
     # image_data = b""
     # for chunk in message_content.iter_content():
