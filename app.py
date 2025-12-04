@@ -61,7 +61,10 @@ def handle_message(event):
 def handle_image_message(event):
     # 画像のバイナリを取得
     message_content = line_bot_api.get_message_content(event.message.id)
-    print("Status code:", message_content.status_code)
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=message_content.status_codeply)
+    )
     # image_data = b""
     # for chunk in message_content.iter_content():
     #     image_data += chunk
