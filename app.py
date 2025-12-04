@@ -66,15 +66,18 @@ def handle_image_message(event):
     for chunk in message_content.iter_content():
         image_data += chunk
     
-    encoded_image = base64.b64encode(image_data).decode("utf-8")
+    encoded_image = base64.b64encode(image_data).decode("utf-8").replace("\n", "")
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",  # Vision対応モデル
         messages=[
-            {"role": "user", "content": [
-                {"type": "text", "text": "この画像の内容を説明してください"},
-                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{encoded_image}"}}
-            ]}
+            {
+                "role": "user", 
+                "content": [
+                    {"type": "text", "text": "この画像の内容を説明してください"},
+                    {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{encoded_image}"}}
+                ]
+            }
         ]  
     )
 
