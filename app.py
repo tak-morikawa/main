@@ -7,7 +7,7 @@ from linebot import (
     LineBotApi, WebhookHandler
 )
 from linebot.exceptions import (
-    InvalidSignatureError
+    InvalidSignatureError, LineBotSdkError
 )
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, ImageMessage
@@ -62,7 +62,7 @@ def handle_image_message(event):
     # 画像のバイナリを取得
     try:
         message_content = line_bot_api.get_message_content(event.message.id)
-    except LineBotApiError as e:
+    except LineBotSdkError as e:
         print(f"LINE APIエラー: {e.status_code} {e.error.message}")
     except Exception as e:
         print(f"その他のエラー: {e}")
