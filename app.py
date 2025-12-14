@@ -60,11 +60,13 @@ def handle_message(event):
 @handler.add(MessageEvent, message=ImageMessage)
 def handle_image_message(event):
     # 画像のバイナリを取得
-    message_content = line_bot_api.get_message_content(event.message.id)
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=message_content.status_code)
-    )
+    try:
+        message_content = line_bot_api.get_message_content(event.message.id)
+    except LineBotApiError as e:
+        print(f"LINE APIエラー: {e.status_code} {e.error.message}")
+    except Exception as e:
+        print(f"その他のエラー: {e}")
+    
     # image_data = b""
     # for chunk in message_content.iter_content():
     #     image_data += chunk
