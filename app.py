@@ -1,6 +1,7 @@
 import logging
 from flask import Flask, request, abort
 import openai
+import base64
 import os
 
 from linebot import (
