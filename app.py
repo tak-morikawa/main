@@ -22,6 +22,7 @@ handler = WebhookHandler('413f2f5dd5a6a38d4c2820264ed7d509')
 
 # OpenAI API Key
 openai.api_key = os.environ["OPENAI_API_KEY"]
+client = openai.OpenAI()
 @app.route("/")
 def test():
     return "OK TEST"
