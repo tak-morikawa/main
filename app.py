@@ -86,6 +86,11 @@ def handle_image_message(event):
         ]  
     )
 
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=response.output_text)
+    )
+
 def ask_openai(prompt):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",  # 必要に応じて変更
